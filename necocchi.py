@@ -21,9 +21,10 @@ def add_post():
     if 'user_id'in session:
         user_id=session['user_id']
         py_task = request.form.get("task")
+        time_limit = request.form.get("time")
         conn = sqlite3.connect('necocchi.db')
         c = conn.cursor()
-        c.execute("INSERT INTO task VALUES(null, ?, ?)",(py_task,user_id))
+        c.execute("INSERT INTO task VALUES(null, ?, ?, ?)",(py_task,time_limit,user_id))
         # DBの保存
         conn.commit()
         conn.close()
@@ -37,10 +38,10 @@ def list():
         c = conn.cursor()
         c.execute("SELECT name from users where id = ?",(user_id,))
         user_name = c.fetchone()[0]
-        c.execute("SELECT id, task FROM task where user_id = ?", (user_id,))
+        c.execute("SELECT id, task, time FROM task where user_id = ?", (user_id,))
         tasklist = []
         for row in c.fetchall():
-            tasklist.append({"id":row[0], "task":row[1]})
+            tasklist.append({"id":row[0], "task":row[1], "time":row[2]})
         c.close
         print(tasklist)
         return render_template('list.html', html_tasklist=tasklist, user_name = user_name)
@@ -70,9 +71,10 @@ def post_edit():
         item_id = int(item_id)
         # 入力フォームからとってくると文字列型になるのでInt型に整形
         task = request.form.get("task")
+        time = request.form.get ("time")
         conn = sqlite3.connect('necocchi.db')
         c = conn.cursor()
-        c.execute("UPDATE task SET task = ? WHERE id = ?", (task, item_id))
+        c.execute("UPDATE task SET task = ?, time = ? WHERE id = ?", (task, time, item_id))
         conn.commit()
         c.close
         return redirect('/list')

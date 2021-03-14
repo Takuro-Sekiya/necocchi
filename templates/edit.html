@@ -5,6 +5,7 @@
 <form action="/edit" method="post">
     <input type="hidden" value="{{task['id']}}" name="task_id">
     <input type="text" value="{{task['task']}}" name="task">
+    <input type="time" value="{{task['time']}}" name="time">
     <input type="submit" name="save" value="編集する">
 </form>
 
