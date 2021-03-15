@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+
+{% extends 'base.html' %}
+{% block content %}
+
+<p>{{user_name}}さんこんにちは</p>
+
+<table border ="1">
+{% for item in html_hearinglist %}
+<tr>
+    <td>{{item["id"]}}</td>
+    <td>{{item["task"]}}</td>
+    <td>{{item["time"]}}</td>
+    <td><button id="dere">できた？</button></td>
+    <td><button id="tun">できなかった？</button></td>
+</tr>
+{% endfor %}
+</table>
+
+<a href="/list">戻る</a>
+
+<p id="dere_replies"></p>
+<p id="tun_replies"></p>
+
+
+
+{% endblock %}
