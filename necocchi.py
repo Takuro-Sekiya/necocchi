@@ -146,5 +146,29 @@ def logout():
 def notfound(error):
     return "404ページです。URL違いです"
 
+# necocchi hearing page
+@app.route('/hearing')
+def hearing():
+    if 'user_id' in session:
+        user_id = session['user_id']
+        conn = sqlite3.connect('necocchi.db')
+        c = conn.cursor()
+        c.execute("SELECT name from users where id = ?",(user_id,))
+        user_name = c.fetchone()[0]
+        c.execute("SELECT id, task, time FROM task where user_id = ?", (user_id,))
+        hearinglist = []
+        for row in c.fetchall():
+            hearinglist.append({"id":row[0], "task":row[1], "time":row[2]})
+        c.close
+        print(hearinglist)
+        return render_template('hearing.html', html_hearinglist=hearinglist, user_name = user_name)
+    else:
+        return redirect('/login')
+
+
+
+
+
+
 if __name__ == '__main__':
     app.run(debug=True)
