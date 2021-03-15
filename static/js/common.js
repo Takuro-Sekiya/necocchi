@@ -207,24 +207,28 @@ $(function () {
   //   $('#del_real').toggle();
   // });
 
+  // var dere_replies = ['やったやん！','すげえ！','最高！'];
+
+  // var dere_repliesNo = Math.floor( Math.random() * dere_replies.length);
+
+  // console.log(dere_replies[dere_repliesNo]);
+
+$('.dere').on('click',function(){
   var dere_replies = ['やったやん！','すげえ！','最高！'];
-
   var dere_repliesNo = Math.floor( Math.random() * dere_replies.length);
-
-  console.log(dere_replies[dere_repliesNo]);
-
-$('#dere').on('click',function(){
-    $("#dere_replies").html(dere_replies[dere_repliesNo])
+    $(".dere_replies").html(dere_replies[dere_repliesNo])
 });
 
-var tun_replies = ['駄目やん！','なんでやねん！','がんばれ！'];
+// var tun_replies = ['駄目やん！','なんでやねん！','がんばれ！'];
 
-var tun_repliesNo = Math.floor( Math.random() * tun_replies.length);
+// var tun_repliesNo = Math.floor( Math.random() * tun_replies.length);
 
-console.log(tun_replies[tun_repliesNo]);
+// console.log(tun_replies[tun_repliesNo]);
 
-$('#tun').on('click',function(){
-  $("#tun_replies").html(tun_replies[tun_repliesNo])
+$('.tun').on('click',function(){
+  var tun_replies = ['駄目やん！','なんでやねん！','がんばれ！'];
+  var tun_repliesNo = Math.floor( Math.random() * tun_replies.length);
+  $(".tun_replies").html(tun_replies[tun_repliesNo])
 });
 
 
