@@ -4,9 +4,11 @@ app = Flask(__name__)
 
 app.secret_key = 'necocchi'
 
-@app.route('/') 
-def hello_world():
-    return 'Hello, World!'
+
+@app.route('/')
+def front():
+    return render_template('frontpage.html')
+
 
 @app.route('/add')
 def add_get():
@@ -15,20 +17,23 @@ def add_get():
     else:
         return redirect('/login')
 
+
 @app.route('/add', methods=["POST"])
 def add_post():
     # name="task" インプットタグに打ち込まれた内容を取得
-    if 'user_id'in session:
-        user_id=session['user_id']
+    if 'user_id' in session:
+        user_id = session['user_id']
         py_task = request.form.get("task")
         time_limit = request.form.get("time")
         conn = sqlite3.connect('necocchi.db')
         c = conn.cursor()
-        c.execute("INSERT INTO task VALUES(null, ?, ?, ?)",(py_task,time_limit,user_id))
+        c.execute("INSERT INTO task VALUES(null, ?, ?, ?)",
+                  (py_task, time_limit, user_id))
         # DBの保存
         conn.commit()
         conn.close()
         return redirect('/list')
+
 
 @app.route('/list')
 def list():
@@ -36,17 +41,18 @@ def list():
         user_id = session['user_id']
         conn = sqlite3.connect('necocchi.db')
         c = conn.cursor()
-        c.execute("SELECT name from users where id = ?",(user_id,))
+        c.execute("SELECT name from users where id = ?", (user_id,))
         user_name = c.fetchone()[0]
         c.execute("SELECT id, task, time FROM task where user_id = ?", (user_id,))
         tasklist = []
         for row in c.fetchall():
-            tasklist.append({"id":row[0], "task":row[1], "time":row[2]})
+            tasklist.append({"id": row[0], "task": row[1], "time": row[2]})
         c.close
         print(tasklist)
-        return render_template('list.html', html_tasklist=tasklist, user_name = user_name)
+        return render_template('list.html', html_tasklist=tasklist, user_name=user_name)
     else:
         return redirect('/login')
+
 
 @app.route("/edit/<int:id>")
 def edit(id):
@@ -59,27 +65,30 @@ def edit(id):
         if task is None:
             return "タスクがありません"
         else:
-            py_item = {"id":id, "task":task[0]}
-            return render_template("edit.html", task = py_item)
+            py_item = {"id": id, "task": task[0]}
+            return render_template("edit.html", task=py_item)
     else:
         return redirect("/login")
 
+
 @app.route('/edit', methods=["POST"])
 def post_edit():
-    if 'user_id' in session : 
+    if 'user_id' in session:
         item_id = request.form.get("task_id")
         item_id = int(item_id)
         # 入力フォームからとってくると文字列型になるのでInt型に整形
         task = request.form.get("task")
-        time = request.form.get ("time")
+        time = request.form.get("time")
         conn = sqlite3.connect('necocchi.db')
         c = conn.cursor()
-        c.execute("UPDATE task SET task = ?, time = ? WHERE id = ?", (task, time, item_id))
+        c.execute("UPDATE task SET task = ?, time = ? WHERE id = ?",
+                  (task, time, item_id))
         conn.commit()
         c.close
         return redirect('/list')
     else:
         return redirect('/login')
+
 
 @app.route('/delete/<int:id>')
 def delete(id):
@@ -102,6 +111,7 @@ def regist_get():
     else:
         return render_template('regist.html')
 
+
 @app.route('/regist', methods=['POST'])
 def regist_post():
     name = request.form.get("user_name")
@@ -109,17 +119,20 @@ def regist_post():
     email = request.form.get("user_address")
     conn = sqlite3.connect('necocchi.db')
     c = conn.cursor()
-    c.execute("INSERT INTO users VALUES(null, ?, ?, ?)",(name, password, email))
+    c.execute("INSERT INTO users VALUES(null, ?, ?, ?)",
+              (name, password, email))
     conn.commit()
     c.close
     return redirect('/login')
 
-@app.route('/login', methods =["GET"])
+
+@app.route('/login', methods=["GET"])
 def login_get():
     if 'user_id' in session:
         return redirect("/list")
     else:
         return render_template("login.html")
+
 
 @app.route('/login', methods=["POST"])
 def login_post():
@@ -128,7 +141,8 @@ def login_post():
     password = request.form.get("user_pass")
     conn = sqlite3.connect('necocchi.db')
     c = conn.cursor()
-    c.execute("SELECT id FROM users WHERE name = ? AND password = ?", (name, password))
+    c.execute("SELECT id FROM users WHERE name = ? AND password = ?",
+              (name, password))
     user_id = c.fetchone()
     conn.close()
     if user_id is None:
@@ -137,37 +151,37 @@ def login_post():
         session['user_id'] = user_id[0]
         return redirect('/list')
 
+
 @app.route("/logout")
 def logout():
     session.pop('user_id', None)
     return redirect('/login')
+
 
 @app.errorhandler(404)
 def notfound(error):
     return "404ページです。URL違いです"
 
 # necocchi hearing page
+
+
 @app.route('/hearing')
 def hearing():
     if 'user_id' in session:
         user_id = session['user_id']
         conn = sqlite3.connect('necocchi.db')
         c = conn.cursor()
-        c.execute("SELECT name from users where id = ?",(user_id,))
+        c.execute("SELECT name from users where id = ?", (user_id,))
         user_name = c.fetchone()[0]
         c.execute("SELECT id, task, time FROM task where user_id = ?", (user_id,))
         hearinglist = []
         for row in c.fetchall():
-            hearinglist.append({"id":row[0], "task":row[1], "time":row[2]})
+            hearinglist.append({"id": row[0], "task": row[1], "time": row[2]})
         c.close
         print(hearinglist)
-        return render_template('hearing.html', html_hearinglist=hearinglist, user_name = user_name)
+        return render_template('hearing.html', html_hearinglist=hearinglist, user_name=user_name)
     else:
         return redirect('/login')
-
-
-
-
 
 
 if __name__ == '__main__':
