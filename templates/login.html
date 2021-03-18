@@ -3,15 +3,27 @@
 {% extends 'base.html' %}
 {% block content %}
 
-<form action="/login" method="post">
-    <p>名前：
-        <input type="text" name="user_name">
-    </p>
-    <p>
-        パスワード：
-        <input type="password" name="user_pass">
-    </p>
-    <input type="submit" name="save" value="ログイン">
-</form>
+<div>
+    <div class="index">
+        <h2 class="index__text">ログイン</h2>
+    </div>
+
+    <div class="form">
+        <form action="/login" method="post">
+            <p>名前：
+                <input type="text" name="user_name">
+            </p>
+            <p>
+                パスワード：
+                <input type="password" name="user_pass">
+            </p>
+            <a href="/">
+                <p>パスワードを忘れた方はこちら</p>
+                <img src="" alt="">
+            </a>
+            <input type="submit" name="save" value="ログイン">
+        </form>
+    </div>
+</div>
 
 {% endblock %}
