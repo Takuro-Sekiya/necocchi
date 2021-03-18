@@ -7,13 +7,25 @@
     <title>Necocchi</title>
     <script type="text/javascript" src="/static/js/jquery-3.2.1.min.js"></script>
     <script type="text/javascript" src="/static/js/common.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/push.js/0.0.11/push.min.js"></script>
 
 </head>
 <body>
-    <header>ねこっちと暮らす</header>
+    <header>
+        <div class="header">
+            <p class="logo">ツンデレねこっちと暮らす</p>
+        </div>
+    </header>
     <!-- 下の2行がindex.htmlとののりしろ -->
     {% block content %}
     {% endblock %}
     
 </body>
+
+<footer>
+    <div class="footer">
+        <p class="copyright"> Powered by Team Necocchi.</p>
+    </div>
+    
+</footer>
 </html>

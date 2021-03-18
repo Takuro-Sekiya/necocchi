@@ -21,6 +21,22 @@
 
 <p class="dere_replies"></p>
 <p class="tun_replies"></p>
+<!-- 
+プッシュ通知 JSをcommon.jsに移動させると動かなくなります
+<button type="button" onclick="sendPushNotification()">クリックして下さい</button>
+<script type="text/javascript">
+    function sendPushNotification() {
+        Push.create('こんにちは！', {
+            body: 'タスクできたかにゃ！',
+            icon: 'index.jpg',
+            timeout: 5000,
+            onClick: function () {
+                this.close();
+                location.href = 'http://127.0.0.1:5000/hearing';
+            }
+        });
+    };
+</script>
 
 
 
