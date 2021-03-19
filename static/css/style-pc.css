@@ -156,11 +156,25 @@ body {
 }
 
 .form {
-    margin: 30px auto;
     width: fit-content;
-    padding: 30px;
+    margin: 60px auto;
+    padding: 60px 120px;
     background-color: white;
     text-align: center;
+}
+
+.form p {
+    color: #707070;
+    font-size: 20px;
+}
+
+.input_text {
+    padding-bottom: 20px;
+}
+
+.input_box {
+    border: none;
+    border-bottom:solid 2px #707070;
 }
 
 .flex {
@@ -168,18 +182,34 @@ body {
 }
 
 .forgetpass_cat {
-    width: 20px;
-    height: 20px;
+    width: 25px;
+    height: 25px;
 }
 
 .buton {
-    width: 100px;
-    height: 40px;
-    background-color: aqua;
+    width: 120px;
+    height: 50px;
+    background-color: yellowgreen;
     border: none;
-    border-radius: 30px;
-    box-shadow: black;
-    
+    border-bottom: solid 4px #627295;
+    border-radius: 25px;
+    cursor: pointer;
+    color: white;
+    font-size: 20px;
+}
+
+.buton:hover {
+    opacity:0.8;
+}
+
+.buton:active {
+	-webkit-transform: translateY(4px);
+  transform: translateY(4px);/*下に動く*/
+  border-bottom: none;
+}
+
+.buton_position {
+    margin-top: 60px;
 }
 
 /* 岸さんCSSはここよ */
