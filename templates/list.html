@@ -6,11 +6,16 @@
 <p>{{user_name}}さんこんにちは</p>
 
 <table border ="1">
+    <td>id</td>
+    <td>やること</td>
+    <td>いつまで？</td>
+    <td>あとどれぐらい?</td>
 {% for item in html_tasklist %}
 <tr>
     <td>{{item["id"]}}</td>
     <td>{{item["task"]}}</td>
     <td>{{item["time"]}}</td>
+    <td>{{item["left_time"]}}</td>
     <td><a href="/edit/{{item['id']}}">編集</a></td>
     <td><a href="/delete/{{item['id']}}">削除</a></td>
 </tr>
