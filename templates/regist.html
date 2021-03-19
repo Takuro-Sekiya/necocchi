@@ -2,20 +2,21 @@
 
 {% extends 'base.html' %}
 {% block content %}
+<div class="index">
+    <h2  class="index__text">新規登録</h2>
+</div>
 
-<h2>新規登録</h2>
-
-<form action="/regist" method="post">
-    <p>名前：
-        <input type="text" name="user_name">
+<form action="/regist" method="post" class="form">
+    <p class="input_text">名前
+        <input type="text" name="user_name" class="input_box">
     </p>
-    <p>パスワード：
-        <input type="password" name="user_pass">
+    <p class="input_text">パスワード
+        <input type="password" name="user_pass" class="input_box">
     </p>
-    <p>メールアドレス：
-        <input type="email" name="user_address">
+    <p class="input_text">メールアドレス
+        <input type="email" name="user_address" class="input_box">
     </p>
-    <input type="submit" name="save" value="登録">
+    <input type="submit" name="save" value="登録" class="buton buton_position">
 </form>
 
 {% endblock %}
