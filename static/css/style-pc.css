@@ -143,7 +143,7 @@ body {
 .index {
     width: fit-content;
     background-color: lightblue;
-    border-radius: 30px;
+    border-radius: 5px;
     margin: 30px auto;
     padding: 15px 30px;
 }
@@ -160,6 +160,26 @@ body {
     width: fit-content;
     padding: 30px;
     background-color: white;
+    text-align: center;
+}
+
+.flex {
+    display: flex;
+}
+
+.forgetpass_cat {
+    width: 20px;
+    height: 20px;
+}
+
+.buton {
+    width: 100px;
+    height: 40px;
+    background-color: aqua;
+    border: none;
+    border-radius: 30px;
+    box-shadow: black;
+    
 }
 
 /* 岸さんCSSはここよ */
