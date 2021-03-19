@@ -43,7 +43,7 @@ def list():
         c = conn.cursor()
         c.execute("SELECT name from users where id = ?", (user_id,))
         user_name = c.fetchone()[0]
-        c.execute("SELECT id, task, time FROM task where user_id = ?", (user_id,))
+        c.execute("SELECT id, task, time FROM task where user_id = ? ORDER BY time ASC", (user_id,))
         tasklist = []
         for row in c.fetchall():
             tasklist.append({"id": row[0], "task": row[1], "time": row[2]})
@@ -173,7 +173,7 @@ def hearing():
         c = conn.cursor()
         c.execute("SELECT name from users where id = ?", (user_id,))
         user_name = c.fetchone()[0]
-        c.execute("SELECT id, task, time FROM task where user_id = ?", (user_id,))
+        c.execute("SELECT id, task, time FROM task where user_id = ? ORDER BY time ASC", (user_id,))
         hearinglist = []
         for row in c.fetchall():
             hearinglist.append({"id": row[0], "task": row[1], "time": row[2]})
