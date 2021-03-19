@@ -232,6 +232,27 @@ $('.tun').on('click',function(){
 });
 
 
+// 通知の許可と表示の設定
+window.onload = function() {
+  Notification.requestPermission();
+  // 時間になったら関数notificationを実行
+  setInterval(notification, 5000);   
+};
+
+let previousMinutes;
+
+const notification = function() {
+  // 現在の時刻を取得
+   const date = new Date();
+  //  inputタグで入力された時間を取得
+   var notifi_time = document.getElementById( "time" ).value ;
+   if (previousMinutes !== notifi_time && minutes % 15 === 0) {
+       previousMinutes = minutes;
+      //  ダブルクォーテーションの中が表示される文字
+       const notification = new Notification("Check!");
+   }
+};
+
 
 
 
