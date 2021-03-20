@@ -179,7 +179,7 @@ body {
     border: none;
     border-radius: 30px;
     box-shadow: black;
-    
+
 }
 
 /* 岸さんCSSはここよ */
@@ -196,11 +196,36 @@ body {
 .header .logo {
     display: flex;
     align-items: center;
-    margin-right: 100px;
-    margin-left: 150px;
-    font-size: 30px;
-    color: green;
+    margin-right: 400px;
+    margin-left: 250px;
+    font-size: 35px;
+    color: #707070;
 }
+
+.tundere img {
+    align-items: center;
+    width: 95%;
+    height: auto;
+}
+
+.buton-wrapper {
+    text-align: center;
+    margin: 0px 150px 10px 150px;
+}
+
+.text {
+    text-align: center;
+    font-size: 50px;
+}
+
+.border {
+    font-size: 30px;
+    text-align: left;
+    line-height: 40px;
+    padding: 100px;
+    margin: 0px 200px 200px 200px;
+}
+
 
 .copyright {
     width: 100%;

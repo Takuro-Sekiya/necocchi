@@ -217,6 +217,8 @@ $('.dere').on('click',function(){
   var dere_replies = ['やったやん！','すげえ！','最高！'];
   var dere_repliesNo = Math.floor( Math.random() * dere_replies.length);
     $(".dere_replies").html(dere_replies[dere_repliesNo])
+    $(".dere_replies").css("display", "block")
+    $(".tun_replies").css("display", "none")
 });
 
 // var tun_replies = ['駄目やん！','なんでやねん！','がんばれ！'];
@@ -229,6 +231,9 @@ $('.tun').on('click',function(){
   var tun_replies = ['駄目やん！','なんでやねん！','がんばれ！'];
   var tun_repliesNo = Math.floor( Math.random() * tun_replies.length);
   $(".tun_replies").html(tun_replies[tun_repliesNo])
+  $(".tun_replies").css("display", "block")
+  $(".dere_replies").css("display", "none")
+
 });
 
 
