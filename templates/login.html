@@ -12,6 +12,11 @@
         <input type="password" name="user_pass">
     </p>
     <input type="submit" name="save" value="ログイン">
+
+    <small class="text-muted ml-2">
+        <a href="{{ url_for('reset_request') }}">Forgot Password?</a>
+    </small>
 </form>
+
 
 {% endblock %}
