@@ -26,10 +26,13 @@ def add_post():
         user_id = session['user_id']
         py_task = request.form.get("task")
         time_limit = request.form.get("time")
+        now_time = request.form.get("now_time")
+        left_time = request.form.get("left_time")
+
         conn = sqlite3.connect('necocchi.db')
         c = conn.cursor()
-        c.execute("INSERT INTO task VALUES(null, ?, ?, ?)",
-                  (py_task, time_limit, user_id))
+        c.execute("INSERT INTO task VALUES(null, ?, ?, ?, ?, ?)",
+                  (py_task, time_limit, user_id, now_time, left_time))
         # DBの保存
         conn.commit()
         conn.close()
