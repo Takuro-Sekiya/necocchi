@@ -186,6 +186,8 @@ body {
 .header {
     display: flex;
     background-color: lightblue;
+    position: fixed;
+    width: 100%;
 }
 
 .header img {
@@ -196,8 +198,8 @@ body {
 .header .logo {
     display: flex;
     align-items: center;
-    margin-right: 400px;
-    margin-left: 250px;
+    margin-right: 500px;
+    width: 100%;
     font-size: 35px;
     color: #707070;
 }
@@ -210,7 +212,7 @@ body {
 
 .buton-wrapper {
     text-align: center;
-    margin: 0px 150px 10px 150px;
+    margin: 0px 150px 80px 150px;
 }
 
 .text {
