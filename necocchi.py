@@ -1,5 +1,6 @@
 from flask import Flask, render_template, request, redirect, session
 import sqlite3
+from datetime import datetime
 app = Flask(__name__)
 
 app.secret_key = 'necocchi'
@@ -39,16 +40,23 @@ def add_post():
 def list():
     if 'user_id' in session:
         user_id = session['user_id']
+        now = datetime.now()
+        now_onlytime = now.strftime("%H:%M")
+        # print(now_time)
         conn = sqlite3.connect('necocchi.db')
         c = conn.cursor()
         c.execute("SELECT name from users where id = ?", (user_id,))
         user_name = c.fetchone()[0]
-        c.execute("SELECT id, task, time FROM task where user_id = ?", (user_id,))
+        c.execute("UPDATE task SET now_time = ?",(now_onlytime,))
+        conn.commit()
+        c.execute("UPDATE task SET left_time = time - now_time")
+        conn.commit()
+        c.execute("SELECT id, task, time, left_time FROM task where user_id = ? ORDER BY time ASC", (user_id,))
         tasklist = []
         for row in c.fetchall():
-            tasklist.append({"id": row[0], "task": row[1], "time": row[2]})
-        c.close
-        print(tasklist)
+            tasklist.append({"id": row[0], "task": row[1], "time": row[2], "left_time":row[3]})
+        c.close()
+        # print(tasklist)
         return render_template('list.html', html_tasklist=tasklist, user_name=user_name)
     else:
         return redirect('/login')
@@ -173,10 +181,10 @@ def hearing():
         c = conn.cursor()
         c.execute("SELECT name from users where id = ?", (user_id,))
         user_name = c.fetchone()[0]
-        c.execute("SELECT id, task, time FROM task where user_id = ?", (user_id,))
+        c.execute("SELECT id, task, time, left_time FROM task where user_id = ? ORDER BY time ASC", (user_id,))
         hearinglist = []
         for row in c.fetchall():
-            hearinglist.append({"id": row[0], "task": row[1], "time": row[2]})
+            hearinglist.append({"id": row[0], "task": row[1], "time": row[2], "left_time":row[3]})
         c.close
         print(hearinglist)
         return render_template('hearing.html', html_hearinglist=hearinglist, user_name=user_name)
