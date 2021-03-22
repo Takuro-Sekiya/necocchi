@@ -174,7 +174,7 @@ body {
 
 .input_box {
     border: none;
-    border-bottom:solid 2px #707070;
+    border-bottom: solid 2px #707070;
 }
 
 .flex {
@@ -191,11 +191,6 @@ body {
     height: 50px;
     background-color: yellowgreen;
     border: none;
-<<<<<<< HEAD
-    border-radius: 30px;
-    box-shadow: black;
-
-=======
     border-bottom: solid 4px #627295;
     border-radius: 25px;
     cursor: pointer;
@@ -204,18 +199,18 @@ body {
 }
 
 .buton:hover {
-    opacity:0.8;
+    opacity: 0.8;
 }
 
 .buton:active {
-	-webkit-transform: translateY(4px);
-  transform: translateY(4px);/*下に動く*/
-  border-bottom: none;
+    -webkit-transform: translateY(4px);
+    transform: translateY(4px);
+    /*下に動く*/
+    border-bottom: none;
 }
 
 .buton_position {
     margin-top: 60px;
->>>>>>> fcf58720d04916a4375278620a08a3d2b28ca089
 }
 
 /* 岸さんCSSはここよ */
