@@ -47,14 +47,16 @@ def list():
         c = conn.cursor()
         c.execute("SELECT name from users where id = ?", (user_id,))
         user_name = c.fetchone()[0]
-        c.execute("UPDATE task SET now_time = ?",(now_onlytime,))
+        c.execute("UPDATE task SET now_time = ?", (now_onlytime,))
         conn.commit()
         c.execute("UPDATE task SET left_time = time - now_time")
         conn.commit()
-        c.execute("SELECT id, task, time, left_time FROM task where user_id = ? ORDER BY time ASC", (user_id,))
+        c.execute(
+            "SELECT id, task, time, left_time FROM task where user_id = ? ORDER BY time ASC", (user_id,))
         tasklist = []
         for row in c.fetchall():
-            tasklist.append({"id": row[0], "task": row[1], "time": row[2], "left_time":row[3]})
+            tasklist.append(
+                {"id": row[0], "task": row[1], "time": row[2], "left_time": row[3]})
         c.close()
         # print(tasklist)
         return render_template('list.html', html_tasklist=tasklist, user_name=user_name)
@@ -181,10 +183,12 @@ def hearing():
         c = conn.cursor()
         c.execute("SELECT name from users where id = ?", (user_id,))
         user_name = c.fetchone()[0]
-        c.execute("SELECT id, task, time, left_time FROM task where user_id = ? ORDER BY time ASC", (user_id,))
+        c.execute(
+            "SELECT id, task, time, left_time FROM task where user_id = ? ORDER BY time ASC", (user_id,))
         hearinglist = []
         for row in c.fetchall():
-            hearinglist.append({"id": row[0], "task": row[1], "time": row[2], "left_time":row[3]})
+            hearinglist.append(
+                {"id": row[0], "task": row[1], "time": row[2], "left_time": row[3]})
         c.close
         print(hearinglist)
         return render_template('hearing.html', html_hearinglist=hearinglist, user_name=user_name)
