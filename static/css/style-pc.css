@@ -189,7 +189,7 @@ body {
 .buton {
     width: 120px;
     height: 50px;
-    background-color: yellowgreen;
+    background-color: #F58484;
     border: none;
     border-bottom: solid 4px #627295;
     border-radius: 25px;
@@ -216,7 +216,7 @@ body {
 /* 岸さんCSSはここよ */
 .header {
     display: flex;
-    background-color: lightblue;
+    background-color: #C2E2F5;
     position: fixed;
     width: 100%;
 }
