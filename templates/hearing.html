@@ -5,7 +5,11 @@
 
 <p class ="user_name">{{user_name}}さんこんにちは</p>
 
-<table border ="1">
+<table class="todo" border ="1">
+    <td>id</td>
+    <td>やること</td>
+    <td>いつまで？</td>
+    <td>あとどれぐらい?</td>
 {% for item in html_hearinglist %}
 <tr>
     <td>{{item["id"]}}</td>
@@ -18,10 +22,23 @@
 {% endfor %}
 </table>
 
+<div class="listbtn">
 <a href="/list">戻る</a>
+</div>
 
+<div class="fukidashi">
 <p class="dere_replies"></p>
 <p class="tun_replies"></p>
+</div>
+
+
+<div class="angry">
+    <img src="../static/img/angry_tun.png" alt="">
+</div>
+<div class="smile">
+    <img src="../static/img/smile_dele.png" alt="">
+</div>
+
 <!-- 
 プッシュ通知 JSをcommon.jsに移動させると動かなくなります
 <button type="button" onclick="sendPushNotification()">クリックして下さい</button>
