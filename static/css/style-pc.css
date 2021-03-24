@@ -136,6 +136,7 @@ table {
 }
 
 /* ここまでリセットCSS */
+
 body {
     background-color: #e8e8e8;
 }
@@ -267,13 +268,34 @@ body {
     color: aliceblue;
     text-align: center;
     padding: 30px 0;
+}
 
-    /* 後で使うかも */
-    /* position: abusolute;   */
+.wrapper {
+    min-height: 80vh;
+    position: relative;
+    box-sizing: border-box;
+}
+
+.footer {
     bottom: 0;
+    width: 100%;
+
 }
 
 /* ここから下でlist hearing add editのcssやっていきます。 */
+
+.white_box {
+    padding-top: 150px;
+}
+
+.add_1 {
+    height: 30px;
+    width: 500px;
+}
+
+.add_2 {}
+
+.add_3 {}
 
 .user_name {
     margin-top: 120px;
