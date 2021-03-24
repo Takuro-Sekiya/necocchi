@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+
+{% extends 'base.html' %}
+{% block content %}
+
+<div class="form">
+    <p pass>パスワードの再発行ページ</p>
+
+    <form action="/forget" method="post">
+        <p class="input_text">名前
+            <input type="text" name="user_name" class="input_box">
+        </p>
+        <p>
+            メールアドレス
+            <input type="emailaddress" name="user_pass" class="input_box">
+        </p>
+
+        <input type="submit" name="save" value="パスワード再送" class="buton buton_pass">
+    </form>
+</div>
+
+{% endblock %}
