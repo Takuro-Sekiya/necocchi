@@ -2,10 +2,12 @@
 {% extends 'base.html' %}
 {% block content %}
 
+<div class="addtask">
 <form action ="/add" method = "post">
     <input type="text" size="100" maxlength="100" name="task">
     <input type="time" name ="time" id="time">
     <input type="submit" name="save" value="そうしん!(^^)!">
 </form>
+</div>
 
 {% endblock %}

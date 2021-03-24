@@ -3,9 +3,10 @@
 {% extends 'base.html' %}
 {% block content %}
 
-<p>{{user_name}}さんこんにちは</p>
+<p class = "user_name">{{user_name}}さんこんにちは</p>
 
-<table border ="1">
+
+<table class= "todo" border ="1">
     <td>id</td>
     <td>やること</td>
     <td>いつまで？</td>
@@ -20,10 +21,22 @@
     <td><a href="/delete/{{item['id']}}">削除</a></td>
 </tr>
 {% endfor %}
-<a href="/add">タスクの追加</a><br>
-<a href="/logout">ログアウト</a>
+
 </table>
 
-<a href="/hearing">ねこっちタイム！</a>
+<div class= "listbtn">
+<a href="/add">タスクの追加</a><br>
+<a href="/logout">ログアウト</a><br>
+<a href="/hearing"> <img class = "necocchi_time" src="../static/img/necocchi_time.png" alt=""></a>
+</div>
+
+<div class="imgs">
+<div class="tun_img">
+    <img src="../static/img/tun.png" alt="">
+</div>
+<div class="dele_img">
+    <img src="../static/img/dele.png" alt="">
+</div>
+</div>
 
 {% endblock %}

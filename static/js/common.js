@@ -214,9 +214,12 @@ $(function () {
   // console.log(dere_replies[dere_repliesNo]);
 
 $('.dere').on('click',function(){
-  var dere_replies = ['やったやん！','すげえ！','最高！'];
+  var dere_replies = ['やったやん！','すげえ！','最高！','aaaaaaaaaaaaaaaaaaaaaaaaaaaaaa<br>aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa'];
   var dere_repliesNo = Math.floor( Math.random() * dere_replies.length);
     $(".dere_replies").html(dere_replies[dere_repliesNo])
+    $(".fukidashi").css("display", "inline-block")
+    $(".smile").css("display", "block")
+    $(".angry").css("display", "none")
     $(".dere_replies").css("display", "block")
     $(".tun_replies").css("display", "none")
 });
@@ -231,6 +234,9 @@ $('.tun').on('click',function(){
   var tun_replies = ['駄目やん！','なんでやねん！','がんばれ！'];
   var tun_repliesNo = Math.floor( Math.random() * tun_replies.length);
   $(".tun_replies").html(tun_replies[tun_repliesNo])
+  $(".fukidashi").css("display", "inline-block")
+  $(".smile").css("display", "none")
+  $(".angry").css("display", "block")
   $(".tun_replies").css("display", "block")
   $(".dere_replies").css("display", "none")
 
