@@ -7,27 +7,28 @@
 
 
 <table class= "todo" border ="1">
-    <td>id</td>
+    <td>No.</td>
     <td>やること</td>
     <td>いつまで？</td>
     <td>あとどれぐらい?</td>
-{% for item in html_tasklist %}
-<tr>
-    <td>{{item["id"]}}</td>
-    <td>{{item["task"]}}</td>
-    <td>{{item["time"]}}</td>
-    <td>{{item["left_time"]}}</td>
-    <td><a href="/edit/{{item['id']}}">編集</a></td>
-    <td><a href="/delete/{{item['id']}}">削除</a></td>
-</tr>
-{% endfor %}
-
+    <div> 
+        {% for item in html_tasklist %}
+        <tr>
+            <td class="td">{{item["id"]}}</td>
+            <td class="td">{{item["task"]}}</td>
+            <td class="td">{{item["time"]}}</td>
+            <td class="td">{{item["left_time"]}}</td>
+            <td><a href="/edit/{{item['id']}}" class="botan botan_position">編集</a></td>
+            <td><a href="/delete/{{item['id']}}" class="botan b_color">削除</a></td>
+        </tr>
+        {% endfor %}
+        
+    </div>
 </table>
 
 <div class= "listbtn">
-<a href="/add">タスクの追加</a><br>
-<a href="/logout">ログアウト</a><br>
-<a href="/hearing"> <img class = "necocchi_time" src="../static/img/necocchi_time.png" alt=""></a>
+<a href="/add" class="buton taskadd_size">タスクの追加</a><br>
+<a href="/hearing"> <img class = "necocchi_time" src="../static/img/start.png" alt=""></a>
 </div>
 
 <div class="imgs">
