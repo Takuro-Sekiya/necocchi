@@ -240,8 +240,12 @@ body {
 
 .tundere img {
     align-items: center;
-    width: 95%;
+    width: 100%;
     height: auto;
+}
+
+.shinki_posi {
+    margin-left: 20px;
 }
 
 .buton-wrapper {
@@ -259,7 +263,7 @@ body {
     text-align: left;
     line-height: 40px;
     padding: 100px;
-    margin: 0px 200px 200px 200px;
+    margin: 0px 230px 200px 230px;
 }
 
 
@@ -291,12 +295,30 @@ body {
 
 .add_1 {
     height: 30px;
-    width: 500px;
+    width: 550px;
 }
 
-.add_2 {}
+.add_2 {
+    height: 32px;
+    width: 90px;
+    font-size: 18px;
+    border: none;
+    border-bottom: solid 2px #707070;
+    color:#707070;
+    text-align: center;
+}
 
-.add_3 {}
+.add_3 {
+    width: 80px;
+    height: 40px;
+    background-color: #f58484;
+    border: none;
+    border-bottom: solid 4px #627295;
+    border-radius: 25px;
+    cursor: pointer;
+    color: white;
+    font-size: 18px;
+}
 
 .user_name {
     margin-top: 120px;
@@ -343,13 +365,14 @@ body {
     text-align: center;
 }
 
+.fukidashi_box {
+    text-align: center;
+}
 
 .fukidashi {
     position: relative;
     display: none;
-    margin-top: 50px;
-    margin-bottom: 20px;
-    margin-left: 450px;
+    margin: 50px auto 20px auto;
     padding: 7px 10px;
     min-width: 120px;
     max-width: 100%;
@@ -419,7 +442,7 @@ body {
 
 .botan {
     width: 120px;
-    height: 50px;
+    height: 45px;
     background-color: #f58484;
     border: none;
     border-bottom: solid 4px #627295;
@@ -428,6 +451,18 @@ body {
     color: white;
     font-size: 20px;
     padding: 6px 10px;
+    margin-bottom: 5px;
+}
+
+.botan:hover {
+    opacity: 0.8;
+}
+
+.botan:active {
+    -webkit-transform: translateY(4px);
+    transform: translateY(4px);
+    /*下に動く*/
+    border-bottom: none;
 }
 
 .botan_position {
@@ -437,6 +472,10 @@ body {
 .b_color {
     background-color: #4c5ce9;
     margin-left: 10px;
+}
+
+.dekinai {
+    width: auto;
 }
 
 .buton:hover {
@@ -466,7 +505,15 @@ td {
     padding: 10px 30px;
 }
 
-.buton_pass {
-    padding: 2px 12px;
+input.buton_pass {
+    width: 180px;
+    padding: 10px 20px;
+    display: inline-block;
+    line-height: 2;
+    margin: 60px 0px 0px;
 
+}
+
+.input_text {
+    margin: 20px 0px 0px
 }

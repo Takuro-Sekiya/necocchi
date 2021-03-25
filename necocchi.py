@@ -198,8 +198,8 @@ def hearing():
     else:
         return redirect('/login')
 
-@app.route('/forget', methods=["POST"])
-def forget_get():
+@app.route('/forget', methods=["GET", "POST"])
+def forget_post():
     if 'user_id' in session:
         return redirect("/login")
     else:

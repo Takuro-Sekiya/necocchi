@@ -3,11 +3,11 @@
 {% block content %}
 
 <div class="edittask">
-<form action="/edit" method="post">
+<form action="/edit" method="post" class="white_box">
     <input type="hidden" value="{{task['id']}}" name="task_id">
-    <input type="text" value="{{task['task']}}" name="task">
-    <input type="time" value="{{task['time']}}" name="time">
-    <input type="submit" name="save" value="編集する">
+    <input class="add_1 input_box" type="text" value="{{task['task']}}" name="task">
+    <input class="add_2" type="time" value="{{task['time']}}" name="time">
+    <input class="add_3" type="submit" name="save" value="編集する">
 </form>
 </div>
 
