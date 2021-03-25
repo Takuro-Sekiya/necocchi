@@ -215,13 +215,16 @@ $('.dere').on('click',function(){
     $(".angry").css("display", "none")
     $(".dere_replies").css("display", "block")
     $(".tun_replies").css("display", "none")
+    let row = $(this).closest("tr").remove();
+    $(row).remove();
+
 });
 
 
 $('.tun').on('click',function(){
   var tun_replies = ['駄目やん！','なんでやねん！','がんばれ！','うそつき','理想と現実が離れすぎているのかもね。<br>タスクの中身を細かくしてみたらどう？'
-  ,'あなたが今日をどう過ごそうが世界は回るから大丈夫。<br>これをやりたいのは本当にお前？','...............','たまには出来ない日もあるさ。でも諦めちゃ駄目だよ'
-  ,"いい加減出来ない報告は飽きてます","実はこんなタスクリストを見る間にやった方がよかったりして"];
+  ,'あなたが今日をどう過ごそうが世界は回るから大丈夫。<br>お前はこれを本当にやりたいの？','...............','たまには出来ない日もあるさ。でも諦めちゃ駄目だよ'
+  ,"いい加減出来ない報告は飽きてます","実はこんなタスクリストを見る間に手を付けたほうがよかったりして。。"];
   var tun_repliesNo = Math.floor( Math.random() * tun_replies.length);
   $(".tun_replies").html(tun_replies[tun_repliesNo])
   $(".fukidashi").css("display", "inline-block")
@@ -229,7 +232,6 @@ $('.tun').on('click',function(){
   $(".angry").css("display", "block")
   $(".tun_replies").css("display", "block")
   $(".dere_replies").css("display", "none")
-
 });
 
 
