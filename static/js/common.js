@@ -203,18 +203,11 @@
 $(function () {  
 
 
-  // $('#del_btn').on('click', function(){
-  //   $('#del_real').toggle();
-  // });
 
-  // var dere_replies = ['やったやん！','すげえ！','最高！'];
-
-  // var dere_repliesNo = Math.floor( Math.random() * dere_replies.length);
-
-  // console.log(dere_replies[dere_repliesNo]);
 
 $('.dere').on('click',function(){
-  var dere_replies = ['やったやん！','すげえ！','最高！','aaaaaaaaaaaaaaaaaaaaaaaaaaaaaa<br>aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa'];
+  var dere_replies = ['やったやん！','すげえ！','最高！','積みあがってるね','ステキやん！','.............','.............','....','で？',
+  '.........','褒めてもらうつもり？<br>自分が決めたことをやっただけで？'];
   var dere_repliesNo = Math.floor( Math.random() * dere_replies.length);
     $(".dere_replies").html(dere_replies[dere_repliesNo])
     $(".fukidashi").css("display", "inline-block")
@@ -224,14 +217,11 @@ $('.dere').on('click',function(){
     $(".tun_replies").css("display", "none")
 });
 
-// var tun_replies = ['駄目やん！','なんでやねん！','がんばれ！'];
-
-// var tun_repliesNo = Math.floor( Math.random() * tun_replies.length);
-
-// console.log(tun_replies[tun_repliesNo]);
 
 $('.tun').on('click',function(){
-  var tun_replies = ['駄目やん！','なんでやねん！','がんばれ！'];
+  var tun_replies = ['駄目やん！','なんでやねん！','がんばれ！','うそつき','理想と現実が離れすぎているのかもね。<br>タスクの中身を細かくしてみたらどう？'
+  ,'あなたが今日をどう過ごそうが世界は回るから大丈夫。<br>これをやりたいのは本当にお前？','...............','たまには出来ない日もあるさ。でも諦めちゃ駄目だよ'
+  ,"いい加減出来ない報告は飽きてます","実はこんなタスクリストを見る間にやった方がよかったりして"];
   var tun_repliesNo = Math.floor( Math.random() * tun_replies.length);
   $(".tun_replies").html(tun_replies[tun_repliesNo])
   $(".fukidashi").css("display", "inline-block")
