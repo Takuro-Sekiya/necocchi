@@ -198,6 +198,13 @@ def hearing():
     else:
         return redirect('/login')
 
+@app.route('/forget', methods=["POST"])
+def forget_get():
+    if 'user_id' in session:
+        return redirect("/login")
+    else:
+        return render_template("forget.html")
+
 
 if __name__ == '__main__':
     app.run(debug=True)
