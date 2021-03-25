@@ -215,8 +215,8 @@ $('.dere').on('click',function(){
     $(".angry").css("display", "none")
     $(".dere_replies").css("display", "block")
     $(".tun_replies").css("display", "none")
-    let row = $(this).closest("tr").remove();
-    $(row).remove();
+    let row = $(this).closest("tr").fadeOut();
+    $(row).fadeOut();
 
 });
 
