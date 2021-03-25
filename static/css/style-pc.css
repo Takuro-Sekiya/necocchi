@@ -240,8 +240,12 @@ body {
 
 .tundere img {
     align-items: center;
-    width: 95%;
+    width: 100%;
     height: auto;
+}
+
+.shinki_posi {
+    margin-left: 20px;
 }
 
 .buton-wrapper {
@@ -259,7 +263,7 @@ body {
     text-align: left;
     line-height: 40px;
     padding: 100px;
-    margin: 0px 200px 200px 200px;
+    margin: 0px 230px 200px 230px;
 }
 
 
