@@ -343,13 +343,14 @@ body {
     text-align: center;
 }
 
+.fukidashi_box {
+    text-align: center;
+}
 
 .fukidashi {
     position: relative;
     display: none;
-    margin-top: 50px;
-    margin-bottom: 20px;
-    margin-left: 450px;
+    margin: 50px auto 20px auto;
     padding: 7px 10px;
     min-width: 120px;
     max-width: 100%;
@@ -419,7 +420,7 @@ body {
 
 .botan {
     width: 120px;
-    height: 50px;
+    height: 45px;
     background-color: #f58484;
     border: none;
     border-bottom: solid 4px #627295;
@@ -428,6 +429,18 @@ body {
     color: white;
     font-size: 20px;
     padding: 6px 10px;
+    margin-bottom: 5px;
+}
+
+.botan:hover {
+    opacity: 0.8;
+}
+
+.botan:active {
+    -webkit-transform: translateY(4px);
+    transform: translateY(4px);
+    /*下に動く*/
+    border-bottom: none;
 }
 
 .botan_position {
@@ -437,6 +450,10 @@ body {
 .b_color {
     background-color: #4c5ce9;
     margin-left: 10px;
+}
+
+.dekinai {
+    width: auto;
 }
 
 .buton:hover {

@@ -12,23 +12,25 @@
     <td>あとどれぐらい?</td>
 {% for item in html_hearinglist %}
 <tr>
-    <td>{{item["id"]}}</td>
-    <td>{{item["task"]}}</td>
-    <td>{{item["time"]}}</td>
-    <td>{{item["left_time"]}}</td>
-    <td><button class="dere">できた？</button></td>
-    <td><button class="tun">できなかった？</button></td>
+    <td class="td">{{item["id"]}}</td>
+    <td class="td">{{item["task"]}}</td>
+    <td class="td">{{item["time"]}}</td>
+    <td class="td">{{item["left_time"]}}</td>
+    <td><button class="dere botan botan_position">できた？</button></td>
+    <td><button class="tun botan b_color dekinai">できなかった？</button></td>
 </tr>
 {% endfor %}
 </table>
 
 <div class="listbtn">
-<a href="/list" class="botan">戻る</a>
+    <a href="/list" class="botan">戻る</a>
 </div>
 
-<div class="fukidashi">
-<p class="dere_replies"></p>
-<p class="tun_replies"></p>
+<div class="fukidashi_box">
+    <div class="fukidashi">
+        <p class="dere_replies"></p>
+        <p class="tun_replies"></p>
+    </div>
 </div>
 
 
@@ -39,8 +41,8 @@
     <img src="../static/img/smile_dele.png" alt="">
 </div>
 
-<!-- 
-プッシュ通知 JSをcommon.jsに移動させると動かなくなります
+
+<!-- プッシュ通知 JSをcommon.jsに移動させると動かなくなります
 <button type="button" onclick="sendPushNotification()">クリックして下さい</button>
 <script type="text/javascript">
     function sendPushNotification() {
@@ -54,7 +56,7 @@
             }
         });
     };
-</script>
+</script> -->
 
 
 
