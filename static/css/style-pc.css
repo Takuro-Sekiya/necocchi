@@ -505,7 +505,15 @@ td {
     padding: 10px 30px;
 }
 
-.buton_pass {
-    padding: 2px 12px;
+input.buton_pass {
+    width: 180px;
+    padding: 10px 20px;
+    display: inline-block;
+    line-height: 2;
+    margin: 60px 0px 0px;
 
+}
+
+.input_text {
+    margin: 20px 0px 0px
 }
