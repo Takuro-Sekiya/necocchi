@@ -1,0 +1,1 @@
+web: gunicorn necocchi:app --log-file=-
